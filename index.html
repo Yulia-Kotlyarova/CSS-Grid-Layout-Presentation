@@ -8,7 +8,8 @@
 
 		<link rel="stylesheet" href="dist/reset.css">
 		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css" id="theme">
+		<link rel="stylesheet" href="dist/style.css">
+		<link rel="stylesheet" href="dist/theme/blood.css" id="theme">
 
 		<!-- Theme used for syntax highlighted code -->
 		<link rel="stylesheet" href="plugin/highlight/monokai.css" id="highlight-theme">
@@ -16,8 +17,468 @@
 	<body>
 		<div class="reveal">
 			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+				<section> 
+					<h1>CSS Grid Layout </h1>
+				</section>
+
+				<section class = "slide-2"> 
+					<section>
+						<h3> What is Grid? </h3>
+						<img class = "grid-sec-2" src = "./img/css-grid-layouts-grid-diagram.jpg" alt = "grid scheme">
+						<p> A grid is an intersecting set of horizontal and vertical lines – one
+							set defining columns, and the other, rows.</p>
+					</section>
+
+
+
+				</section>
+
+				<section class="slide-3">
+					<section>
+						<ul> <h3>What exactly grids can do?</h3>
+							<li> Useful for two-dimensional align.</li>
+							<li> Grid layout enables to align elements into columns and rows.</li>
+							<li> Box alignment. </li>
+							<li> Easier work with complicated layout.</li>
+							<li> Grid container's child elements could position themselves so they actually overlap and layer.</li>
+
+						</ul>
+					</section>
+					<section class="slide-3-a">
+						<h4> Grid layout enables to align elements into columns and rows. </h4>
+						<div class="wrapper-img">
+							<img src = "./img/slide-3-a-column.png" alt = "some screenshot">
+							<img src = "./img/slide-3-a-row.png" alt = "some screenshot">
+						</div>
+					</section>
+
+					<section>
+						<p> <strong> Grid </strong> is 2-dimensional system, meaning it can handle both 
+							columns and rows, unlike flex-box which is largely a 1-dimensional system.</p>
+						<img id = "grid-flex" src = "./img/grid-vs-flexbox.jpg" alt = "FLEX-VS -GRID">
+					</section>
+			
+					<section class="slide-3-b">
+						<h4> Box alignment. </h4>
+						<img src = "./img/slide-3-b.png" alt = "some screenshot">
+						<p> Grid items can stretch to the height 
+							of the container, meaning that equal height columns were possible. </p>
+					</section>
+
+					<section>
+						<p> Grid container's child elements could position themselves so they actually overlap and layer. </p>
+						<img src = "./img/overlap.png" alt = "some screenshot">
+					</section>
+
+
+				</section>
+
+				<section class="slide-4">
+					<section>
+						<h2> Start With Grid</h2>
+						<h3> basic settings </h3>
+
+						<p> CSS code </p>
+						<pre><code data-trim data-noescape>
+							.wrapper {
+								display: grid;
+							}
+							  </code></pre>
+
+					</section>
+					<section>
+						<p> HTML code </p>
+
+					<pre><code data-trim >
+							<body>
+								<div class = "wrapper">
+									<div class = "box-1"> BOX 1</div>
+									<div class = "box-2"> BOX 2</div>
+								</div>
+							</body>
+						  </code></pre>
+
+					<p> CSS code </p>
+					
+					<pre><code data-trim data-noescape>
+						.wrapper {
+							display: grid;
+							grid-template-columns: 30% 70%;
+						}
+						  </code></pre>
+
+					<img src="./img/slide-4.png" alt="screenshot">
+				</section>
+
+					<section class="section slide-4-a">
+						<p> HTML code </p>
+
+						<pre><code data-trim >
+								<body>
+
+									<div class = "wrapper">
+										<div class = "box-1"> BOX 1</div>
+										<div class = "box-2"> BOX 2</div>
+										<div class = "box-3"> BOX 3</div>
+										<div class = "box-4"> BOX 4</div>
+									</div>
+
+								</body>
+							  </code></pre>
+	
+						<p> CSS code </p>
+						
+						<pre><code data-trim data-noescape>
+							.wrapper {
+								display: grid;
+								grid-template-columns: 30% 70%;
+							}
+							  </code></pre>
+	
+						<img src="./img/slide-4-a.png" alt="screenshot">
+
+					</section>
+
+					<section class="section slide-4-b">
+						<p> HTML code </p>
+
+						<pre><code data-trim >
+								<body>
+
+									<div class = "wrapper">
+										<div class = "box-1"> BOX 1</div>
+										<div class = "box-2"> BOX 2</div>
+										<div class = "box-3"> BOX 3</div>
+										<div class = "box-4"> BOX 4</div>
+									</div>
+
+								</body>
+							  </code></pre>
+	
+						<p> CSS code </p>
+						
+						<pre><code data-trim data-noescape>
+							.wrapper {
+								display: grid;
+								grid-template-columns: 30% 20% 50%;
+							}
+							  </code></pre>
+	
+						<img src="./img/slide-4-b.png" alt="screenshot">
+
+					</section>
+
+					
+					<section class="section slide-4-c">
+						<p> HTML code </p>
+
+						<pre><code data-trim >
+								<div class = "wrapper">
+									<div class = "box-1"> BOX 1 </div>
+									<div class = "box-2"> BOX 2 </div>
+									<div class = "box-3"> BOX 3</div>
+									<div class = "box-4"> BOX 4</div>
+									<div class = "box-5"> BOX 5 </div>
+									<div class = "box-6"> BOX 6 </div>
+									<div class = "box-7"> BOX 7</div>
+									<div class = "box-8"> BOX 8</div>
+								</div>   
+							  </code></pre>
+	
+						<p> CSS code </p>
+						
+						<pre><code data-trim data-noescape>
+							.wrapper {
+								display: grid;
+								grid-template-columns: 30% 20% 50%;
+							}
+							  </code></pre>
+	
+						<img src="./img/slide-4-c.png" alt="screenshot">
+
+					</section>
+
+				</section>
+				<section class="slide-5">
+					<section >
+						<h4> separating columns and rows</h4>
+						<pre><code data-trim data-noescape>
+							.wrapper {
+								display: grid;
+								grid-gap: 1em;
+							}
+						  </code> </pre>
+						  <img src = "./img/gap-1.png" alt = "screenshot" >
+					</section>
+					<section >
+						<p class = "grid-gap-p">
+							grid-gap: 1em; <br>
+							grid-gap: 10%; <br>
+							grid-gap: 10px 20px; <br>
+							grid-gap: calc(20px + 10%); <br>
+						</p>
+
+					</section>
+				</section>
+				<section class = "slide-6">
+					<section>
+						<h2> Grid Fractions </h2>
+						<p> <strong> Fr </strong> -  fraction, special grid flexible unit with useful fetchers </p>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape data-line-numbers="9">
+							.wrapper > div {
+								height: 300px;
+								padding: 1em;
+							}
+							
+							.wrapper {
+								display: grid;
+								grid-gap: 1em ;
+								grid-template-columns: 1fr 1fr 1fr 1fr;
+							}
+						  </code> </pre>
+						  <img src="./img/templ-1.png" alt ="screenshot">
+
+					</section>
+					<section>
+						<pre><code data-trim data-noescape data-line-numbers="9">
+							.wrapper > div {
+								height: 300px;
+								padding: 1em;
+							}
+							
+							.wrapper {
+								display: grid;
+								grid-gap: 1em ;
+								grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+							}
+						  </code> </pre>
+						  <img src="./img/templ-2.png" alt ="screenshot">
+
+					</section>
+					<section>
+						<pre><code data-trim data-noescape data-line-numbers="9">
+							.wrapper > div {
+								height: 300px;
+								padding: 1em;
+							}
+							
+							.wrapper {
+								display: grid;
+								grid-gap: 1em ;
+								grid-template-columns: 1fr 1fr 1fr 1fr 2fr;
+							}
+						  </code> </pre>
+						  <pre><code data-trim data-noescape>
+							grid-template-columns: repeat(6, 1fr);
+						  </code> </pre>
+						  <img src="./img/templ-2.png" alt ="screenshot">
+
+					</section>
+				</section>
+				<section class = "slide-7">
+					<section>
+						<pre><code data-trim data-noescape data-line-numbers="4">
+							.wrapper {
+								display: grid;
+								grid-gap: 10px;
+								grid-auto-rows: 70px;
+							  }
+						  </code> </pre>
+						  <img src="./img/auto-rows-1.png" alt ="screenshot">
+					</section>
+					<section>
+						<pre><code data-trim data-noescape data-line-numbers="4">
+							.wrapper {
+								display: grid;
+								grid-gap: 10px;
+								grid-auto-rows: minmax( 70px, auto);
+							  }
+						  </code> </pre>
+						  <img src="./img/auto-rows-2.png" alt ="screenshot">
+					</section>
+					<section>
+						<pre><code data-trim data-noescape>
+							/* Keyword values */
+							grid-auto-rows: min-content;
+							grid-auto-rows: max-content;
+							grid-auto-rows: auto;
+
+							/* length values */
+							grid-auto-rows: 100px;
+							grid-auto-rows: 20cm;
+							grid-auto-rows: 50vmax;
+
+							/* percentage values */
+							grid-auto-rows: 10%;
+							grid-auto-rows: 33.3%;
+
+							/* flex values */
+							grid-auto-rows: 0.5fr;
+							grid-auto-rows: 3fr;
+
+							/* minmax() values */
+							grid-auto-rows: minmax(100px, auto);
+							grid-auto-rows: minmax(max-content, 2fr);
+							grid-auto-rows: minmax(20%, 80vmax);
+
+							/* multiple track-size values */
+							grid-auto-rows: min-content max-content auto;
+							grid-auto-rows: 100px 150px 390px;
+							grid-auto-rows: 10% 33.3%;
+							grid-auto-rows: 0.5fr 3fr 1fr;
+							grid-auto-rows: minmax(100px, auto) minmax(max-content, 2fr)
+							 minmax(20%, 80vmax);
+							grid-auto-rows: 100px minmax(100px, auto) 10% 0.5fr 
+							fit-content(400px);
+
+							/* Global values */
+							grid-auto-rows: inherit;
+							grid-auto-rows: initial;
+							grid-auto-rows: unset;
+						  </code> </pre>
+					</section>
+
+				</section>
+				<section class="section slide-8">
+					<section> 
+						<h2> Justify and align </h2>
+					</section>
+					<section>
+						<div class="wrapper-img">
+							<pre><code data-trim data-noescape data-line-numbers="5">
+								.wrapper {
+									display: grid;
+									grid-gap: 10px;
+									grid-auto-rows: 70px;
+									justify-items: start;
+								}
+							</code> </pre>
+							<img src="./img/justify-start.png" alt ="screenshot">
+							<pre><code data-trim data-noescape data-line-numbers="5">
+								.wrapper {
+									display: grid;
+									grid-gap: 10px;
+									grid-auto-rows: 70px;
+									justify-items: end;
+								}
+							</code> </pre>
+							<img src="./img/justify-end.png" alt ="screenshot">
+						</div>
+					</section>
+					<section>
+						<pre><code data-trim data-noescape data-line-numbers="5">
+							.wrapper {
+								display: grid;
+								grid-gap: 10px;
+								grid-auto-rows: 70px;
+								justify-items: stretch;
+							}
+						</code> </pre>
+						<img src="./img/justify-stretch.png" alt ="screenshot">
+					</section>
+					<section> 
+						<ul id = "align-list"> <strong>align - properties:</strong> 
+							<li> auto </li>
+							<li> normal </li>
+							<li> start </li>
+							<li> end </li>
+							<li> center </li>
+							<li> stretch</li>
+							<li> baseline </li>
+							<li> first baseline </li>
+							<li> last baseline </li>
+						</ul>
+
+					</section>
+				</section>
+
+				<section class="slide-9">
+					<section>
+						<h3>Grid lines</h3>
+						<img src="./img/1_diagram_numbered_grid_lines.png" alt = "grid lines">
+					</section>
+					<section>
+						<div class = "wrapper-img-long">
+							<pre><code data-trim data-noescape>
+
+								.box-1 {
+									grid-column: 1 / 2;
+									grid-row: 1/3;
+								}
+								
+								.box-2 {
+									grid-column: 2 / 6;
+									grid-row: 1/3;
+								}
+								.box-3 {
+									grid-column: 1/2;
+									grid-row: 3/6;
+								}
+								.box-4 {
+									grid-column: 2 / 4;
+									grid-row: 3/6;
+								}
+								.box-5 {
+									grid-column: 4 / 5;
+									grid-row: 3/6;
+								}
+								.box-6 {
+									grid-column: 5 / 6;
+									grid-row: 3/6;
+								}
+								
+							</code> </pre>
+							<img src="./img/grid-lines.png" alt = "screenshot">
+						</div>
+					</section>
+					<section>
+						<div class = "wrapper-img-long">
+							<pre><code data-trim data-noescape>
+								.box-1 {
+									grid-column: 1 / 2;
+									grid-row: 1/3;
+								}
+								
+								.box-2 {
+									grid-column: 2 / 6;
+									grid-row: 1/3;
+								}
+								.box-3 {
+									grid-column: 1/2;
+									grid-row: 3/6;
+								}
+								.box-4 {
+									grid-column: 2 / 3;
+									grid-row: 3/6;
+								}
+								.box-5 {
+									grid-column: 3 / 5;
+									grid-row: 1/6;
+								}
+								.box-6 {
+									grid-column: 4 / 6;
+									grid-row: 3/6;
+								}
+							</code> </pre>
+							<img src="./img/overlap-2.png" alt = "screenshot">
+						</div>
+					</section>
+				</section>
+
+				<section class = "slide-10">
+					<h4> Browser Support </h4>
+					<img src = "img/support.png" alt = " support table">
+				</section>
+
+				<section class="slide-11">
+					<section>
+						<a href = "https://www.w3.org/TR/css-grid-1/"> Link to the official docs </a>
+					</section>
+				</section>
+
+
 			</div>
 		</div>
 

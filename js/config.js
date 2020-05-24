@@ -46,13 +46,13 @@ export default {
 	// number for the current slide. The function should take in a slide
 	// object and return an array with one string [slideNumber] or
 	// three strings [n1,delimiter,n2]. See #formatSlideNumber().
-	slideNumber: false,
+	slideNumber: true,
 
 	// Can be used to limit the contexts in which the slide number appears
 	// - "all":      Always show the slide number
 	// - "print":    Only when printing to PDF
 	// - "speaker":  Only in the speaker view
-	showSlideNumber: 'all',
+	showSlideNumber: 'print',
 
 	// Use 1 based indexing for # links to match slide number (default is zero
 	// based)
