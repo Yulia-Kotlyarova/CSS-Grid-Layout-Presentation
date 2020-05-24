@@ -465,6 +465,56 @@
 							<img src="./img/overlap-2.png" alt = "screenshot">
 						</div>
 					</section>
+					<section>
+						<p> You can choose what you would like to name your 
+							area. For example, if I wish to create the layout shown below 
+							I can identify four main areas:
+							 a header, a footer, a sidebar, the main content.</p>
+						<img src="./img/Layout-names-1.png" alt = "Layout-names">
+					</section>
+					<section> 
+						<pre><code data-trim data-noescape>
+							.header {
+								grid-area: hd;
+							}
+							.footer {
+								grid-area: ft;
+							}
+							.content {
+								grid-area: main;
+							}
+							.sidebar {
+								grid-area: sd;
+							}
+						</code> </pre>
+					</section>
+					<section>
+						<p>Having defined these names create a layout. This time, instead of placing an items
+							 using line numbers specified on the items themselves, 
+							we create the whole layout on the grid container.</p>
+							<pre><code data-trim data-noescape>
+								.wrapper {
+									display: grid;
+									grid-template-columns: repeat(9, 1fr);
+									grid-auto-rows: minmax(100px, auto);
+									grid-template-areas: 
+									  "hd hd hd hd   hd   hd   hd   hd   hd"
+									  "sd sd sd main main main main main main"
+									  "ft ft ft ft   ft   ft   ft   ft   ft";
+								}
+							</code> </pre>
+					</section>
+
+					<section>
+						<img src = "./img/Layout-names-2.png" alt = "Layout-names-2">
+					</section>
+
+					<section>
+						<p>You can leave grid cells empty with this method of layout. 
+							To leave a cell empty use the full stop character, '.'. </p>
+						<p>	If I want to only display the footer directly under the main content 
+							I would need to leave the three cells underneath the sidebar empty.</p>
+					</section>
 				</section>
 
 				<section class = "slide-10">
